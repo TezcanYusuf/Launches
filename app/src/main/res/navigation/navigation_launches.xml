@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_launches"
+    app:startDestination="@id/launchesListFragment">
+
+    <fragment
+        android:id="@+id/launchesListFragment"
+        android:name="com.yusuf.launches.ui.list.LaunchesListFragment"
+        android:label="fragment_launches_list"
+        tools:layout="@layout/fragment_launches_list" >
+        <action
+            android:id="@+id/action_launchesListFragment_to_launchDetailFragment"
+            app:destination="@id/launchDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/launchDetailFragment"
+        android:name="com.yusuf.launches.ui.detail.LaunchDetailFragment"
+        tools:layout="@layout/fragment_launch_detail"
+        android:label="LaunchDetailFragment">
+        <action
+            android:id="@+id/action_launchDetailFragment_to_launchesListFragment"
+            app:destination="@id/launchesListFragment" />
+    </fragment>
+</navigation>

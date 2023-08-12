@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <dimen name="margin">16dp</dimen>
+
+
+    <dimen name="width_180">180dp</dimen>
+    <dimen name="height_180">180dp</dimen>
+    <dimen name="height_50">50dp</dimen>
+
+
+    <!--text sizes-->
+    <dimen name="tv_title_text_size">28sp</dimen>
+    <dimen name="tv_body_text_size">18sp</dimen>
+
+</resources>
