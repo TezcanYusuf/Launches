@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin"
             style="@style/TextViewTitleTextStyle"
-            android:text="@{launch.rocketName}"
+            android:text="@{launch.missionName}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/appCompatImageView"
             app:layout_constraintTop_toTopOf="parent"
@@ -51,6 +51,19 @@
             android:text="@{launch.rocketName}"
             app:layout_constraintStart_toEndOf="@+id/appCompatImageView"
             app:layout_constraintTop_toBottomOf="@+id/rocketNameTv"
+            tools:text="Trailblazer">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/yearTv"
+            style="@style/TextViewBodyTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin"
+            android:text="@{launch.launchYear}"
+            app:layout_constraintStart_toEndOf="@+id/appCompatImageView"
+            app:layout_constraintTop_toBottomOf="@+id/missionNameTv"
             tools:text="Trailblazer">
 
         </androidx.appcompat.widget.AppCompatTextView>

@@ -1,6 +1,5 @@
 package com.yusuf.launches.ui.list
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -10,6 +9,7 @@ import com.yusuf.launches.ext.doOnSuccess
 import com.yusuf.launches.usecase.LaunchUseCase
 import com.yusuf.launches.usecase.ui.LaunchConfigUi
 import com.yusuf.launches.usecase.ui.LaunchListUi
+import com.yusuf.launches.utils.StringUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import java.util.Locale
@@ -54,12 +54,14 @@ class LaunchesListViewModel @Inject constructor(
         } else {
             val newList: ArrayList<LaunchListUi> = ArrayList()
             launches.value?.launchList?.forEach { launch ->
-                val replacedRocketName =
-                    launch.rocketName?.lowercase(Locale.ROOT)?.trim()?.replace(" ", "")
-                val replacedFilterValue = filterValue.lowercase(
-                    Locale.ROOT
-                ).trim().replace(" ", "")
-                if ((replacedRocketName?.contains(replacedFilterValue) ?: "") == true
+                val replacedRocketYear = launch.launchYear?.let { StringUtils.prepareForQuery(it) }
+
+                val replacedMissionName = launch.missionName.let { StringUtils.prepareForQuery(it) }
+
+                val replacedFilterValue = StringUtils.prepareForQuery(filterValue)
+
+                if ((replacedRocketYear?.contains(replacedFilterValue)
+                        ?: "") == true || replacedMissionName.contains(replacedFilterValue)
                 ) {
                     newList.add(launch)
                 }

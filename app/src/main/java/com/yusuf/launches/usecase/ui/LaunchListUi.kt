@@ -8,7 +8,7 @@ import kotlinx.serialization.Serializable
 @Parcelize
 data class LaunchListUi(
     val missionName: String,
-    val launchYear: String,
+    val launchYear: String?,
     val rocketName: String?,
     val missionPatch: String?,
     val details: String?,

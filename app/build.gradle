@@ -34,9 +34,11 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", "$BASE_URL"
         }
         debug {
             zipAlignEnabled true
+            buildConfigField "String", "BASE_URL", "$BASE_URL"
         }
     }
     compileOptions {

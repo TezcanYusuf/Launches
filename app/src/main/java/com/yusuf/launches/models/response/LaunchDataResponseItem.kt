@@ -11,7 +11,7 @@ data class LaunchDataResponseItem(
     @JsonProperty("launch_success")
     val launchSuccess: Boolean?,
     @JsonProperty("launch_year")
-    val launchYear: String = "",
+    val launchYear: String?,
     @JsonProperty("links")
     val links: Links?,
     @JsonProperty("mission_name")
